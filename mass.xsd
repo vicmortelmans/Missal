@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="mass">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="day" type="day" minOccurs="1" maxOccurs="unbounded"/>
+        <xs:element name="time" type="time" minOccurs="1" maxOccurs="1" default="Ordinary Time"/>   
+        <xs:element name="reading" type="reading" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:complexType name="day">
+    <xs:sequence>
+      <xs:element name="name" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="date" type="xs:date" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="cycle" minOccurs="1" maxOccurs="3" default="A">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="A"/>
+            <xs:enumeration value="B"/>
+            <xs:enumeration value="C"/>
+            <xs:enumeration value="I"/>
+            <xs:enumeration value="II"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="category" minOccurs="1" maxOccurs="1" default="sunday">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="sunday"/>
+            <xs:enumeration value="solemnity"/>
+            <xs:enumeration value="feast"/>
+            <xs:enumeration value="memorial"/>
+            <xs:enumeration value="seasonal weekday"/>
+            <xs:enumeration value="ferial weekday"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="time">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Easter Triduum"/>
+      <xs:enumeration value="Easter Season"/>
+      <xs:enumeration value="Lent"/>
+      <xs:enumeration value="Christmas Season"/>
+      <xs:enumeration value="Advent"/>
+      <xs:enumeration value="Ordinary Time"/>
+      <xs:enumeration value="Rogation and Ember days"/>
+    </xs:restriction>
+  </xs:simpleType>       
+
+  <xs:complexType name="reading">
+    <xs:sequence>
+      <xs:element name="readingtype" minOccurs="1" maxOccurs="1" default="gospel">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="gospel"/>
+            <xs:enumeration value="psalm"/>
+            <xs:enumeration value="epistel"/>
+            <xs:enumeration value="lecture"/>
+          </xs:restriction>
+        </xs:simpleType>              
+      </xs:element>
+      <xs:element name="readingreference" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="illustration" minOccurs="1" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="passage" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="passagereference" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="url" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="contexturl" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="title" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="artist" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="year" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="location" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="copyright" minOccurs="1" maxOccurs="1"/>
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+
+</xs:schema>
