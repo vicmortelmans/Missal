@@ -17,7 +17,7 @@
       <xs:element name="coordinates" minOccurs="1" maxOccurs="1"/>
       <xs:element name="name" minOccurs="1" maxOccurs="1"/><!-- assumed to be identical to ../name if empty -->
       <xs:element name="name2" minOccurs="1" maxOccurs="1"/><!-- typically a reference to when it's celebrated -->
-      <xs:element name="date" type="xs:date" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="date" type="xs:date" minOccurs="0" maxOccurs="1"/>
       <xs:element name="cycle" minOccurs="1" maxOccurs="3" default="A">
         <xs:simpleType>
           <xs:restriction base="xs:string">
