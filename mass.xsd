@@ -7,6 +7,7 @@
         <xs:element name="name" minOccurs="1" maxOccurs="1"/>
         <xs:element name="day" type="day" minOccurs="1" maxOccurs="unbounded"/>
         <xs:element name="time" type="time" minOccurs="1" maxOccurs="1" default="Ordinary Time"/>   
+        <xs:element name="rite" type="rite" minOccurs="1" maxOccurs="1" default="ordinary"/>   
         <xs:element name="reading" type="reading" minOccurs="1" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
@@ -44,6 +45,22 @@
     </xs:sequence>
   </xs:complexType>
 
+  <xs:complexType name="day_eo">
+    <xs:sequence>
+      <xs:element name="coordinates" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="name" minOccurs="1" maxOccurs="1"/><!-- assumed to be identical to ../name if empty -->
+      <xs:element name="name2" minOccurs="1" maxOccurs="1"/><!-- typically a reference to when it's celebrated -->
+      <xs:element name="date" type="xs:date" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="category" minOccurs="1" maxOccurs="1" default="sunday">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="sunday"/><!--TODO -->
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
   <xs:simpleType name="time">
     <xs:restriction base="xs:string">
       <xs:enumeration value="Easter Triduum"/>
@@ -53,6 +70,13 @@
       <xs:enumeration value="Advent"/>
       <xs:enumeration value="Ordinary Time"/>
       <xs:enumeration value="Rogation and Ember days"/>
+    </xs:restriction>
+  </xs:simpleType>       
+
+  <xs:simpleType name="rite">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ordinary"/>
+      <xs:enumeration value="extraordinary"/>
     </xs:restriction>
   </xs:simpleType>       
 
