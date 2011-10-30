@@ -5,61 +5,43 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element name="name" minOccurs="1" maxOccurs="1"/>
-        <xs:element name="day" type="day" minOccurs="1" maxOccurs="unbounded"/>
-        <xs:element name="time" type="time" minOccurs="1" maxOccurs="1" default="Ordinary Time"/>   
+        <xs:element name="day-eo" type="day" minOccurs="1" maxOccurs="unbounded"/>
+        <xs:element name="time-eo" type="time" minOccurs="1" maxOccurs="1" default="Ordinary Time"/>   
         <xs:element name="form" type="form" minOccurs="0" maxOccurs="1" default="ordinary"/>   
         <xs:element name="reading" type="reading" minOccurs="1" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  
-  <xs:complexType name="day">
+
+  <xs:complexType name="day_eo">
     <xs:sequence>
       <xs:element name="coordinates" minOccurs="1" maxOccurs="1"/>
       <xs:element name="name" minOccurs="1" maxOccurs="1"/><!-- assumed to be identical to ../name if empty -->
       <xs:element name="name2" minOccurs="1" maxOccurs="1"/><!-- typically a reference to when it's celebrated -->
       <xs:element name="date" type="xs:date" minOccurs="0" maxOccurs="1"/>
-      <xs:element name="cycle" minOccurs="1" maxOccurs="3" default="A">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="A"/>
-            <xs:enumeration value="B"/>
-            <xs:enumeration value="C"/>
-            <xs:enumeration value="I"/>
-            <xs:enumeration value="II"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
       <xs:element name="category" minOccurs="1" maxOccurs="1" default="sunday">
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:enumeration value="sunday"/>
-            <xs:enumeration value="solemnity"/>
-            <xs:enumeration value="feast"/>
-            <xs:enumeration value="memorial"/>
-            <xs:enumeration value="seasonal weekday"/>
-            <xs:enumeration value="ferial weekday"/>
+            <xs:enumeration value="sunday"/><!--TODO -->
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
     </xs:sequence>
   </xs:complexType>
 
-  <xs:simpleType name="time">
+  <xs:simpleType name="time-eo">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="Easter Triduum"/>
-      <xs:enumeration value="Easter Season"/>
-      <xs:enumeration value="Lent"/>
-      <xs:enumeration value="Christmas Season"/>
-      <xs:enumeration value="Advent"/>
-      <xs:enumeration value="Ordinary Time"/>
-      <xs:enumeration value="Rogation and Ember days"/>
+      <xs:enumeration value="Christmas season"/>
+      <xs:enumeration value="Season per Annum"/>
+      <xs:enumeration value="Season of Septuagesima"/>
+      <xs:enumeration value="Season of Lent"/>
+      <xs:enumeration value="Easter season"/>
     </xs:restriction>
   </xs:simpleType>       
 
   <xs:simpleType name="form">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="ordinary"/>
+      <xs:enumeration value="extraordinary"/>
     </xs:restriction>
   </xs:simpleType>       
 
