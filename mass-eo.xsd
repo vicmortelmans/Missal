@@ -19,7 +19,7 @@
       <xs:element name="name" minOccurs="1" maxOccurs="1"/><!-- assumed to be identical to ../name if empty -->
       <xs:element name="name2" minOccurs="1" maxOccurs="1"/><!-- typically a reference to when it's celebrated -->
       <xs:element name="date" type="xs:date" minOccurs="0" maxOccurs="1"/>
-      <xs:element name="category" minOccurs="1" maxOccurs="1" default="sunday">
+      <xs:element name="category" minOccurs="1" maxOccurs="1" default="sundayii">
         <xs:simpleType>
           <xs:restriction base="xs:string">
             <xs:enumeration value="feasti"/>
