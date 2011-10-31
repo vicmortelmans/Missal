@@ -7,7 +7,7 @@
         <xs:element name="name" minOccurs="1" maxOccurs="1"/>
         <xs:element name="day-eo" type="day-eo" minOccurs="1" maxOccurs="unbounded"/>
         <xs:element name="time-eo" type="time-eo" minOccurs="1" maxOccurs="1" default="Season per Annum"/>   
-        <xs:element name="form" type="form" minOccurs="0" maxOccurs="1" default="eo"/>   
+        <xs:element name="form" type="form" minOccurs="1" maxOccurs="1" default="eo"/>   
         <xs:element name="reading" type="reading" minOccurs="1" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
@@ -41,7 +41,7 @@
 
   <xs:simpleType name="form">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="extraordinary"/>
+      <xs:enumeration value="eo"/>
     </xs:restriction>
   </xs:simpleType>       
 
