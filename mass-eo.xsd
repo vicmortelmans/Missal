@@ -6,8 +6,8 @@
       <xs:sequence>
         <xs:element name="name" minOccurs="1" maxOccurs="1"/>
         <xs:element name="day-eo" type="day-eo" minOccurs="1" maxOccurs="unbounded"/>
-        <xs:element name="time-eo" type="time-eo" minOccurs="1" maxOccurs="1" default="Ordinary Time"/>   
-        <xs:element name="form" type="form" minOccurs="0" maxOccurs="1" default="ordinary"/>   
+        <xs:element name="time-eo" type="time-eo" minOccurs="1" maxOccurs="1" default="Season per Annum"/>   
+        <xs:element name="form" type="form" minOccurs="0" maxOccurs="1" default="eo"/>   
         <xs:element name="reading" type="reading" minOccurs="1" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
