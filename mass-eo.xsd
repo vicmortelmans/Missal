@@ -22,7 +22,20 @@
       <xs:element name="category" minOccurs="1" maxOccurs="1" default="sunday">
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:enumeration value="sunday"/><!--TODO -->
+            <xs:enumeration value="feasti"/>
+            <xs:enumeration value="vigili"/>
+            <xs:enumeration value="sundayi"/>
+            <xs:enumeration value="octavei"/>
+            <xs:enumeration value="feriai"/>
+            <xs:enumeration value="feastii"/>
+            <xs:enumeration value="octaveii"/>
+            <xs:enumeration value="vigilii"/>
+            <xs:enumeration value="octaveii"/>
+            <xs:enumeration value="feriaii"/>
+            <xs:enumeration value="feastiii"/>
+            <xs:enumeration value="vigiliii"/>
+            <xs:enumeration value="feriaiii"/>
+            <xs:enumeration value="feriaiv"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
