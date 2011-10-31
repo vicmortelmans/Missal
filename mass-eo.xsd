@@ -30,6 +30,7 @@
             <xs:enumeration value="feastii"/>
             <xs:enumeration value="octaveii"/>
             <xs:enumeration value="vigilii"/>
+            <xs:enumeration value="sundayii"/>
             <xs:enumeration value="octaveii"/>
             <xs:enumeration value="feriaii"/>
             <xs:enumeration value="feastiii"/>
