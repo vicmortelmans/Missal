@@ -13,7 +13,7 @@
     </xs:complexType>
   </xs:element>
 
-  <xs:complexType name="day_eo">
+  <xs:complexType name="day-eo">
     <xs:sequence>
       <xs:element name="coordinates" minOccurs="1" maxOccurs="1"/>
       <xs:element name="name" minOccurs="1" maxOccurs="1"/><!-- assumed to be identical to ../name if empty -->
