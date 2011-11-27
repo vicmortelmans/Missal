@@ -90,7 +90,7 @@
       <xs:element name="illustrationref" minOccurs="0" maxOccurs="unbounded">
         <xs:complexType>
           <xs:all>
-            <xs:element name="url" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="refurl" minOccurs="1" maxOccurs="1"/>
           </xs:all>
         </xs:complexType>
       </xs:element>
