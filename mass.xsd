@@ -47,11 +47,11 @@
 
   <xs:simpleType name="time">
     <xs:restriction base="xs:string">
+      <xs:enumeration value="Advent"/>
+      <xs:enumeration value="Christmastide"/>
+      <xs:enumeration value="Lent"/>
       <xs:enumeration value="Easter Triduum"/>
       <xs:enumeration value="Easter Season"/>
-      <xs:enumeration value="Lent"/>
-      <xs:enumeration value="Christmas Season"/>
-      <xs:enumeration value="Advent"/>
       <xs:enumeration value="Ordinary Time"/>
       <xs:enumeration value="Rogation and Ember days"/>
     </xs:restriction>

@@ -44,12 +44,14 @@
   </xs:complexType>
 
   <xs:simpleType name="time-eo">
+    <!--http://divinumofficium.com/www/horas/Help/Rubrics/General%20Rubrics.html#8-->
     <xs:restriction base="xs:string">
-      <xs:enumeration value="Christmas season"/>
-      <xs:enumeration value="Season per Annum"/>
+      <xs:enumeration value="Advent"/>
+      <xs:enumeration value="Christmastide"/>
       <xs:enumeration value="Season of Septuagesima"/>
-      <xs:enumeration value="Season of Lent"/>
-      <xs:enumeration value="Easter season"/>
+      <xs:enumeration value="Lent"/>
+      <xs:enumeration value="Paschaltide"/>
+      <xs:enumeration value="Season per Annum"/>
     </xs:restriction>
   </xs:simpleType>       
 
