@@ -74,28 +74,30 @@
         </xs:simpleType>              
       </xs:element>
       <xs:element name="readingreference" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="illustration" minOccurs="0" maxOccurs="unbounded">
-        <xs:complexType>
-          <xs:all>
-            <xs:element name="passage" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="passagereference" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="url" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="contexturl" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="title" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="artist" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="year" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="location" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="copyright" minOccurs="1" maxOccurs="1"/>
-          </xs:all>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="illustrationref" minOccurs="0" maxOccurs="unbounded">
-        <xs:complexType>
-          <xs:all>
-            <xs:element name="refurl" minOccurs="1" maxOccurs="1"/>
-          </xs:all>
-        </xs:complexType>
-      </xs:element>
+      <xs:all maxOccurs="unbounded">
+          <xs:element name="illustration" minOccurs="0" maxOccurs="unbounded">
+            <xs:complexType>
+              <xs:all>
+                <xs:element name="passage" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="passagereference" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="url" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="contexturl" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="title" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="artist" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="year" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="location" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="copyright" minOccurs="1" maxOccurs="1"/>
+              </xs:all>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="illustrationref" minOccurs="0" maxOccurs="unbounded">
+            <xs:complexType>
+              <xs:all>
+                <xs:element name="refurl" minOccurs="1" maxOccurs="1"/>
+              </xs:all>
+            </xs:complexType>
+          </xs:element>
+      </xs:all>
     </xs:sequence>
   </xs:complexType>
 
