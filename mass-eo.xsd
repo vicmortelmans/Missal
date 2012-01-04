@@ -74,7 +74,7 @@
         </xs:simpleType>              
       </xs:element>
       <xs:element name="readingreference" minOccurs="1" maxOccurs="1"/>
-      <xs:all maxOccurs="unbounded">
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:element name="illustration" minOccurs="0" maxOccurs="unbounded">
             <xs:complexType>
               <xs:all>
@@ -97,7 +97,7 @@
               </xs:all>
             </xs:complexType>
           </xs:element>
-      </xs:all>
+      </xs:sequence>
     </xs:sequence>
   </xs:complexType>
 
