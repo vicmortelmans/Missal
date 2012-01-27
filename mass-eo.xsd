@@ -94,6 +94,7 @@
             <xs:complexType>
               <xs:all>
                 <xs:element name="refurl" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="refpassage" minOccurs="0" maxOccurs="1"/>
               </xs:all>
             </xs:complexType>
           </xs:element>
