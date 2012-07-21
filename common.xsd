@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" >
+
+  <xs:element name="mass">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" type="name" minOccurs="1" maxOccurs="1"/><!-- e.g. to identify extra rites: baptism, confirmation, confession,... -->
+        <xs:element name="form" type="form" minOccurs="1" maxOccurs="2" default="of"/>   
+        <xs:element name="reading" type="reading" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:simpleType name="name">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="mass"/>
+      <xs:enumeration value="confession"/>
+    </xs:restriction>
+  </xs:simpleType>       
+
+  <xs:simpleType name="form">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="eo"/>
+      <xs:enumeration value="of"/>
+    </xs:restriction>
+  </xs:simpleType>       
+
+  <xs:complexType name="reading">
+    <xs:sequence>
+      <xs:element name="readingtype" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value='Introitus'/>
+            <xs:enumeration value='Salutatio populi'/>
+            <xs:enumeration value='Actus paenitentialis'/>
+            <xs:enumeration value='Misericordiam'/>
+            <xs:enumeration value='Kyrie'/>
+            <xs:enumeration value='Gloria'/>
+            <xs:enumeration value='Epistula'/>
+            <xs:enumeration value='Lectio prima'/>
+            <xs:enumeration value='Lectio secunda'/>
+            <xs:enumeration value='Evangelium'/>
+            <xs:enumeration value='Credo'/>
+            <xs:enumeration value='Symbolum Apostolorum'/>
+            <xs:enumeration value='Oratio fidelium'/>
+            <xs:enumeration value='Offertorium'/>
+            <xs:enumeration value='Canon'/>
+            <xs:enumeration value='Sanctus'/>
+            <xs:enumeration value='Benedictus'/>
+            <xs:enumeration value='Consecratio'/>
+            <xs:enumeration value='Mysterium fidei'/>
+            <xs:enumeration value='Elevation'/>
+            <xs:enumeration value='Ritus communionis'/>
+            <xs:enumeration value='Libera nos'/>
+            <xs:enumeration value='Pax Domini'/>
+            <xs:enumeration value='Agnus Dei'/>
+            <xs:enumeration value='Domine non sum dignus'/>
+            <xs:enumeration value='Communio'/>
+            <xs:enumeration value='Ritus conclusionis'/>
+            <xs:enumeration value='The last gospel'/>
+          </xs:restriction>
+        </xs:simpleType>              
+      </xs:element>
+      <xs:element name="readingtext" minOccurs="1" maxOccurs="1"/>
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="illustration" minOccurs="0" maxOccurs="unbounded">
+            <xs:complexType>
+              <xs:all>
+                <xs:element name="passage" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="passagereference" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="url" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="contexturl" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="title" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="artist" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="year" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="location" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="copyright" minOccurs="1" maxOccurs="1"/>
+              </xs:all>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="illustrationref" minOccurs="0" maxOccurs="unbounded">
+            <xs:complexType>
+              <xs:all>
+                <xs:element name="refurl" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="refpassage" minOccurs="0" maxOccurs="1"/>
+              </xs:all>
+            </xs:complexType>
+          </xs:element>
+       </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+
+
+</xs:schema>
+
