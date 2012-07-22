@@ -5,7 +5,6 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element name="name" type="name" minOccurs="1" maxOccurs="1"/><!-- e.g. to identify extra rites: baptism, confirmation, confession,... -->
-        <xs:element name="form" type="form" minOccurs="1" maxOccurs="2" default="of"/>   
         <xs:element name="reading" type="reading" minOccurs="1" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
@@ -27,6 +26,7 @@
 
   <xs:complexType name="reading">
     <xs:sequence>
+      <xs:element name="form" type="form" minOccurs="1" maxOccurs="2" default="of"/>   
       <xs:element name="readingtype" minOccurs="1" maxOccurs="1">
         <xs:simpleType>
           <xs:restriction base="xs:string">
@@ -62,6 +62,7 @@
         </xs:simpleType>              
       </xs:element>
       <xs:element name="readingtext" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="readingtextlatin" minOccurs="1" maxOccurs="1"/>
       <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:element name="illustration" minOccurs="0" maxOccurs="unbounded">
             <xs:complexType>
