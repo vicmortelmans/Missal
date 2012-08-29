@@ -6,7 +6,7 @@
       <xs:sequence>
         <xs:element name="name" minOccurs="1" maxOccurs="1"/>
         <xs:element name="day" type="day" minOccurs="1" maxOccurs="unbounded"/>
-        <xs:element name="time" type="time" minOccurs="1" maxOccurs="1" default="Ordinary Time"/>   
+        <xs:element name="time" type="time" minOccurs="1" maxOccurs="1" default="Ordinary Time"/><!-- TODO add 'order' attribute -->   
         <xs:element name="form" type="form" minOccurs="0" maxOccurs="1" default="of"/>   
         <xs:element name="reading" type="reading" minOccurs="1" maxOccurs="unbounded"/>
       </xs:sequence>
@@ -53,7 +53,7 @@
       <xs:enumeration value="Easter Triduum"/>
       <xs:enumeration value="Easter Season"/>
       <xs:enumeration value="Ordinary Time"/>
-      <xs:enumeration value="Rogation and Ember days"/>
+      <xs:enumeration value="Feasts"/>
     </xs:restriction>
   </xs:simpleType>       
 
