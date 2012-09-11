@@ -45,7 +45,7 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:simpleType name="time">
+  <xs:simpleType name="time-type">
     <xs:restriction base="xs:string">
       <xs:enumeration value="Advent"/>
       <xs:enumeration value="Christmastide"/>
@@ -57,6 +57,14 @@
     </xs:restriction>
   </xs:simpleType>       
 
+  <xs:complexType name="time">
+    <xs:simpleContent>
+      <xs:extension base="time-type">
+        <xs:attribute name="order" type="xs:integer"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>       
+  
   <xs:simpleType name="form">
     <xs:restriction base="xs:string">
       <xs:enumeration value="of"/>
