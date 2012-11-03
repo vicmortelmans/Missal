@@ -6,7 +6,7 @@
       <xs:sequence>
         <xs:element name="name" minOccurs="1" maxOccurs="1"/>
         <xs:element name="day" type="day" minOccurs="1" maxOccurs="unbounded"/>
-        <xs:element name="time" type="time" minOccurs="1" maxOccurs="1" default="Ordinary Time"/><!-- TODO add 'order' attribute -->   
+        <xs:element name="time" type="time" minOccurs="1" maxOccurs="1" default="Ordinary Time"/>
         <xs:element name="form" type="form" minOccurs="0" maxOccurs="1" default="of"/>   
         <xs:element name="reading" type="reading" minOccurs="1" maxOccurs="unbounded"/>
       </xs:sequence>
@@ -15,7 +15,7 @@
   
   <xs:complexType name="day">
     <xs:sequence>
-      <xs:element name="coordinates" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="coordinates" type="coordinates" minOccurs="1" maxOccurs="1"/>
       <xs:element name="name" minOccurs="1" maxOccurs="1"/><!-- assumed to be identical to ../name if empty -->
       <xs:element name="name2" minOccurs="1" maxOccurs="1"/><!-- typically a reference to when it's celebrated -->
       <xs:element name="date" type="xs:date" minOccurs="0" maxOccurs="1"/>
@@ -61,6 +61,14 @@
     <xs:simpleContent>
       <xs:extension base="time-type">
         <xs:attribute name="order" type="xs:integer"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>       
+  
+  <xs:complexType name="coordinates">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="idx" type="xs:integer"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>       

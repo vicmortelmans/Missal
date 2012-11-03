@@ -6,7 +6,7 @@
       <xs:sequence>
         <xs:element name="name" minOccurs="1" maxOccurs="1"/>
         <xs:element name="day-eo" type="day-eo" minOccurs="1" maxOccurs="unbounded"/>
-        <xs:element name="time-eo" type="time-eo" minOccurs="1" maxOccurs="1" default="Season per Annum"/><!-- TODO add 'order' attribute --> 
+        <xs:element name="time-eo" type="time-eo" minOccurs="1" maxOccurs="1" default="Season per Annum"/>
         <xs:element name="form" type="form" minOccurs="1" maxOccurs="1" default="eo"/>   
         <xs:element name="reading" type="reading" minOccurs="1" maxOccurs="unbounded"/>
       </xs:sequence>
@@ -15,7 +15,7 @@
 
   <xs:complexType name="day-eo">
     <xs:sequence>
-      <xs:element name="coordinates" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="coordinates" type="coordinates" minOccurs="1" maxOccurs="1"/>
       <xs:element name="name" minOccurs="1" maxOccurs="1"/><!-- assumed to be identical to ../name if empty -->
       <xs:element name="name2" minOccurs="1" maxOccurs="1"/><!-- typically a reference to when it's celebrated -->
       <xs:element name="date" type="xs:date" minOccurs="0" maxOccurs="1"/>
@@ -64,6 +64,14 @@
     </xs:simpleContent>
   </xs:complexType>       
 
+  <xs:complexType name="coordinates">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="idx" type="xs:integer"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>       
+  
   <xs:simpleType name="form">
     <xs:restriction base="xs:string">
       <xs:enumeration value="eo"/>
